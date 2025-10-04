@@ -1,6 +1,5 @@
 package com.example.myapp
 
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class MyAdapter(private val videoList: List<VideoData>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyVideosAdapter(private val videoList: List<VideoData>) : RecyclerView.Adapter<MyVideosAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_view, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.videos_item_view, parent, false)
         return MyViewHolder(itemView)
     }
 

@@ -1,10 +1,12 @@
 package com.example.myapp
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -21,6 +23,11 @@ class MyChannelAdapter(private val channelList: List<ChannelData>) : RecyclerVie
         holder.subscribers.text = currentChannel.subscriberCount
         holder.videos.text = currentChannel.videosCount
         holder.profile.setImageResource(currentChannel.profileResId)
+        holder.itemView.setOnClickListener { view ->
+            val context = view.context
+            val intent = Intent(context, VideosActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
