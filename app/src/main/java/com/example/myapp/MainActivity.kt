@@ -22,7 +22,53 @@ class MainActivity : AppCompatActivity() {
         }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val videoList = listOf(
+            VideoData("Kotlin for Beginners", "Tech Explained", "1.5M views", R.drawable.img1),
+            VideoData("How to Cook Pasta", "Chef Master", "3.2M views", R.drawable.img2),
+            VideoData("DIY Home Decor", "Creative Corner", "890K views", R.drawable.img3),
+            VideoData("A Trip to the Mountains", "Travel Vlogs", "550K views", R.drawable.img4),
+            VideoData("Understanding RecyclerView", "Android Devs", "2.1M views", R.drawable.img5),
+            VideoData("Kotlin for Beginners", "Tech Explained", "1.5M views", R.drawable.img6),
+            VideoData("How to Cook Pasta", "Chef Master", "3.2M views", R.drawable.img7),
+            VideoData("DIY Home Decor", "Creative Corner", "890K views", R.drawable.img8),
+            VideoData("A Trip to the Mountains", "Travel Vlogs", "550K views", R.drawable.img9),
+            VideoData("Understanding RecyclerView", "Android Devs", "2.1M views", R.drawable.img10),
+            VideoData("Kotlin for Beginners", "Tech Explained", "1.5M views", R.drawable.img1),
+            VideoData("How to Cook Pasta", "Chef Master", "3.2M views", R.drawable.img2),
+            VideoData("DIY Home Decor", "Creative Corner", "890K views", R.drawable.img3),
+            VideoData("A Trip to the Mountains", "Travel Vlogs", "550K views", R.drawable.img4),
+            VideoData("Understanding RecyclerView", "Android Devs", "2.1M views", R.drawable.img5),
+            VideoData("Kotlin for Beginners", "Tech Explained", "1.5M views", R.drawable.img6),
+            VideoData("How to Cook Pasta", "Chef Master", "3.2M views", R.drawable.img7),
+            VideoData("DIY Home Decor", "Creative Corner", "890K views", R.drawable.img8),
+            VideoData("A Trip to the Mountains", "Travel Vlogs", "550K views", R.drawable.img9),
+            VideoData("Understanding RecyclerView", "Android Devs", "2.1M views", R.drawable.img10),
+            VideoData("Kotlin for Beginners", "Tech Explained", "1.5M views", R.drawable.img1),
+            VideoData("How to Cook Pasta", "Chef Master", "3.2M views", R.drawable.img2),
+            VideoData("DIY Home Decor", "Creative Corner", "890K views", R.drawable.img3),
+            VideoData("A Trip to the Mountains", "Travel Vlogs", "550K views", R.drawable.img4),
+            VideoData("Understanding RecyclerView", "Android Devs", "2.1M views", R.drawable.img5),
+            VideoData("Kotlin for Beginners", "Tech Explained", "1.5M views", R.drawable.img6),
+            VideoData("How to Cook Pasta", "Chef Master", "3.2M views", R.drawable.img7),
+            VideoData("DIY Home Decor", "Creative Corner", "890K views", R.drawable.img8),
+            VideoData("A Trip to the Mountains", "Travel Vlogs", "550K views", R.drawable.img9),
+            VideoData("Understanding RecyclerView", "Android Devs", "2.1M views", R.drawable.img10),
+            VideoData("Kotlin for Beginners", "Tech Explained", "1.5M views", R.drawable.img1),
+            VideoData("How to Cook Pasta", "Chef Master", "3.2M views", R.drawable.img2),
+            VideoData("DIY Home Decor", "Creative Corner", "890K views", R.drawable.img3),
+            VideoData("A Trip to the Mountains", "Travel Vlogs", "550K views", R.drawable.img4),
+            VideoData("Understanding RecyclerView", "Android Devs", "2.1M views", R.drawable.img5),
+            VideoData("Kotlin for Beginners", "Tech Explained", "1.5M views", R.drawable.img6),
+            VideoData("How to Cook Pasta", "Chef Master", "3.2M views", R.drawable.img7),
+            VideoData("DIY Home Decor", "Creative Corner", "890K views", R.drawable.img8),
+            VideoData("A Trip to the Mountains", "Travel Vlogs", "550K views", R.drawable.img9),
+            VideoData("Understanding RecyclerView", "Android Devs", "2.1M views", R.drawable.img10)
+        )
+
+        val adapter = MyAdapter(videoList)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.hasFixedSize()
+        binding.recyclerView.adapter = adapter
     }
 }
