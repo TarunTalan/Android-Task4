@@ -15,14 +15,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         val videoList = listOf(
             VideoData("Kotlin for Beginners", "Tech Explained", "1.5M views", R.drawable.img1),
             VideoData("How to Cook Pasta", "Chef Master", "3.2M views", R.drawable.img2),
@@ -68,7 +67,8 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = MyAdapter(videoList)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.hasFixedSize()
         binding.recyclerView.adapter = adapter
+        binding.recyclerView.hasFixedSize()
+
     }
 }
